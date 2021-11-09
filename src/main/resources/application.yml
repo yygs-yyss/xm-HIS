@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: demo
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+  cache:
+    redis:
+        cache-null-values: true
+        time-to-live: 50000
+  datasource:
+    url: 'jdbc:mysql://101.200.179.25:3306/Hospital?
+            createDatabaseIfNotExist=true
+            &serverTimezone=Asia/Shanghai'
+    username: 2018214256
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+  jackson:
+    default-property-inclusion: non_null # 序列化时忽略空值属性
+server:
+  port: 8082
+logging:
+  level:
+    root: warn
+    com:
+      example: debug
+  pattern:
+    console: '%-5level %C.%M[%line] - %msg%n'
+
+my:
+  secretkey: R28K42ZEJ8LWRHU5
+  salt: 636eac2534bcfcb0
+
+mybatis-plus:
+  configuration:
+    call-setters-on-nulls: true
+
